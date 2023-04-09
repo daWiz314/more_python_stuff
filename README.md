@@ -6,3 +6,7 @@ The objective of this script is to use it as a location to learn
        ---Everything Will actually be in this same dir because other wise it gets touchy
    Should be easy enough, and well with-in my abilities.
    After I finish that, I would like to add the ability to save input data, whatever we do to it, and output data with an easy comparison.
+
+
+ALSO
+The reason I have this on GitHub is to better familiarize myself with it, and to easily transfer between my laptop and PC
