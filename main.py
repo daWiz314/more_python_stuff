@@ -14,19 +14,11 @@ import extra_funcs as ef
 
 
 # This way we can import custom files
-import os
 import importlib
 
-file_names_with_ending = [name for name in os.listdir() if name.endswith(".py")]
-fixed_names = []
 
-for name in file_names_with_ending:
-    if name == 'main.py' or name == 'extra_funcs.py':
-        continue
-    fixed_names.append(name[0:-3])
-    
-# We don't need this anymore, so go away
-del file_names_with_ending
+fixed_names = ef.get_files()
+
 
 from time import sleep # import sleep for delay at end of program
 print("Hello World") # Say hello world to terminal
