@@ -9,19 +9,13 @@
 #   After I finish that, I would like to add the ability to save input data, whatever we do to it, and output data with an easy comparison.
 ###
 
-# Extra functions to keep things neat
-import extra_funcs as ef
+print("Hello World") # Say hello world to terminal so you know it's running
 
 
-# This way we can import custom files
-import importlib
-
-
-fixed_names = ef.get_files()
-
-
+import extra_funcs as ef # Extra functions to keep things neat
 from time import sleep # import sleep for delay at end of program
-print("Hello World") # Say hello world to terminal
+
+fixed_names = ef.get_files() # Get files to test
 
 # Continue to do this until we get some output
 while True:
@@ -33,33 +27,10 @@ while True:
     
     print(">")
     user_input = input()
-
-    if user_input[0].lower() == 'q':
-        quit = True
+    
+    if ef.run_file(fixed_names, user_input):
+        continue
     else:
-        quit = False
-
-    # Is a try block to get rid of error output
-    try:
-        if quit:
-            raise IndexError
-        cs = importlib.import_module(fixed_names[int(user_input)]) #cs = custom file
-        cs.main()
-        ef.pause()
-        print("\n\n\n")
-    except IndexError:
-        print("\n\n\n")
-        print("GoodBye!")
-        break
-    except ValueError:
-        print("\n\n\n")
-        print("Not valid input! Try again!")
-        sleep(1)
-    except Exception as inst:
-        print("----ERROR----")
-        print(type(inst))
-        print(inst)
-        print("----ERROR----")
         break
 
 sleep(1) # This way user(Me) can see output no matter how they(I) run it
