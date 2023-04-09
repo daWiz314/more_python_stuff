@@ -9,6 +9,9 @@
 #   After I finish that, I would like to add the ability to save input data, whatever we do to it, and output data with an easy comparison.
 ###
 
+# Extra functions to keep things neat
+import extra_funcs as ef
+
 
 # This way we can import custom files
 import os
@@ -18,7 +21,7 @@ file_names_with_ending = [name for name in os.listdir() if name.endswith(".py")]
 fixed_names = []
 
 for name in file_names_with_ending:
-    if name == 'main.py':
+    if name == 'main.py' or name == 'extra_funcs.py':
         continue
     fixed_names.append(name[0:-3])
     
@@ -34,16 +37,23 @@ while True:
     for i in range(len(fixed_names)):
         print(f'{i}) {fixed_names[i]}')
     
-    print(f'{len(fixed_names)}) Quit')
+    print(f'{len(fixed_names)}) (Q)uit')
     
     print(">")
     user_input = input()
 
+    if user_input[0].lower() == 'q':
+        quit = True
+    else:
+        quit = False
+
     # Is a try block to get rid of error output
     try:
+        if quit:
+            raise IndexError
         cs = importlib.import_module(fixed_names[int(user_input)]) #cs = custom file
         cs.main()
-        sleep(2)
+        ef.pause()
         print("\n\n\n")
     except IndexError:
         print("\n\n\n")
@@ -62,6 +72,4 @@ while True:
 
 sleep(1) # This way user(Me) can see output no matter how they(I) run it
 
-for i in range(20): # Clear screen when done, we don't want any ugly clutter
-    print()
-      
+ef.clean_output()
