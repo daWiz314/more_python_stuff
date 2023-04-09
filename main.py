@@ -20,7 +20,6 @@ fixed_names = []
 for name in file_names_with_ending:
     if name == 'main.py':
         continue
-    print(name)
     fixed_names.append(name[0:-3])
     
 # We don't need this anymore, so go away
