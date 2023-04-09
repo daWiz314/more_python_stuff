@@ -1,2 +1,4 @@
 test.cpython-310.pyc
-./.vscode
+.vscode
+.vscode/*
+.vscode/settings.json
