@@ -7,13 +7,43 @@
 #   After I finish that, I would like to add the ability to save input data, whatever we do to it, and output data with an easy comparison.
 ###
 
-from time import sleep #import sleep for delay at end of program
-print("Hello World") #Say hello world to terminal
-sleep(2) #This way user(Me) can see output no matter how they(I) run it
 
+# This way we can import custom files
+import os
+import importlib
 
+file_names_with_ending = [name for name in os.listdir() if name.endswith(".py")]
+fixed_names = []
 
+for name in file_names_with_ending:
+    if name == 'main.py':
+        continue
+    print(name)
+    fixed_names.append(name[0:-3])
 
-for i in range(20): #Clear screen when done, we don't want any ugly clutter
+from time import sleep # import sleep for delay at end of program
+print("Hello World") # Say hello world to terminal
+
+# Continue to do this until we get some output
+while True:
+    print("What file would you like to run?")
+    for i in range(len(fixed_names)):
+        print(f'{i}) {fixed_names[i]}')
+    
+    print(f'{len(fixed_names)}) Quit')
+    
+    print(">")
+    user_input = input()
+
+    try:
+        cs = importlib.import_module(fixed_names[int(user_input)]) #cs = custom file
+        cs.main()
+        sleep(2)
+    except:
+        break
+
+sleep(2) # This way user(Me) can see output no matter how they(I) run it0
+
+for i in range(20): # Clear screen when done, we don't want any ugly clutter
     print()
       
