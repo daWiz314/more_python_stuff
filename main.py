@@ -22,6 +22,9 @@ for name in file_names_with_ending:
         continue
     print(name)
     fixed_names.append(name[0:-3])
+    
+# We don't need this anymore, so go away
+del file_names_with_ending
 
 from time import sleep # import sleep for delay at end of program
 print("Hello World") # Say hello world to terminal
