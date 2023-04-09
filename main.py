@@ -57,7 +57,7 @@ while True:
         print("----ERROR----")
         break
 
-sleep(1) # This way user(Me) can see output no matter how they(I) run it0
+sleep(1) # This way user(Me) can see output no matter how they(I) run it
 
 for i in range(20): # Clear screen when done, we don't want any ugly clutter
     print()
