@@ -1,4 +1,5 @@
 # more_python_stuff
+Main reason to have this script (for me) is to have examples of different things I can use, because it's easier than searching through docs
 The objective of this script is to use it as a location to learn
    I will probably just stick each thing I learn into a separate file and just include it into here
    Tomorrow I will work on updating this to work with anything I add to it
