@@ -37,14 +37,27 @@ while True:
     print(">")
     user_input = input()
 
+    # Is a try block to get rid of error output
     try:
         cs = importlib.import_module(fixed_names[int(user_input)]) #cs = custom file
         cs.main()
         sleep(2)
-    except:
+    except IndexError:
+        print("\n\n\n")
+        print("GoodBye!")
+        break
+    except ValueError:
+        print("\n\n\n")
+        print("Not valid input! Try again!")
+        sleep(1)
+    except Exception as inst:
+        print("----ERROR----")
+        print(type(inst))
+        print(inst)
+        print("----ERROR----")
         break
 
-sleep(2) # This way user(Me) can see output no matter how they(I) run it0
+sleep(1) # This way user(Me) can see output no matter how they(I) run it0
 
 for i in range(20): # Clear screen when done, we don't want any ugly clutter
     print()
