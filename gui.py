@@ -8,8 +8,8 @@ class App(tk.Tk):
         self.geometry('400x300')
         self.resizable(0,0)
 
-        self.columnconfigure(0, weight=0)
-        
+        self.columnconfigure([0,1,2], weight=1)
+        self.rowconfigure([0,1], weight=1)
 
         self.__create_widgets(content)
         del self.content
@@ -19,9 +19,9 @@ class App(tk.Tk):
         scroll_frame = tk.Frame(self)
         button_frame = tk.Frame(self)
 
-        LabelFrame(self).grid(column=1, row=0, sticky=tk.NE) # Welcome Message
-        ListBoxFrame(self, content).grid(column=0, row=1) # List Box and Scroll Bar
-        ButtonFrame(self).grid(column=2, row=1, sticky=tk.E)
+        LabelFrame(welcome_message).grid(column=1, row=0, sticky=tk.NE) # Welcome Message
+        ListBoxFrame(scroll_frame, content).grid(column=0, row=1, sticky=tk.W) # List Box and Scroll Bar
+        ButtonFrame(button_frame).grid(column=2, row=1, sticky=tk.E)
         # welcome_message.grid(column=2, row=0, sticky=tk.NSEW) # Display the frame for the welcome message
         # scroll_frame.grid(column=0, row=1) # Display the frame for the scroll bar
         for child in self.winfo_children():
