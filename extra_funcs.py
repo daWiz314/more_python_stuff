@@ -16,7 +16,7 @@ def get_files():
     file_names_with_ending = [name for name in os.listdir() if name.endswith(".py")]
     fixed_names = [] # fixed names = Names of files without extension so we can import them
     for name in file_names_with_ending:
-        if name == 'main.py' or name == 'extra_funcs.py': # Skip our files that are CRITICAL to base function of script
+        if name == 'main.py' or name == 'extra_funcs.py' or name == 'gui.py': # Skip our files that are CRITICAL to base function of script
             continue
         fixed_names.append(name[0:-3])
     return fixed_names
