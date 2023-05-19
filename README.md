@@ -14,8 +14,11 @@ The objective of this script is to use it as a location to learn
 I will probably just stick each thing I learn into a separate file and just include it into here
 - 100% what I did
 
-~~Tomorrow I will work on updating this to work with anything I add to it~~ [x] Done
-~~The ideal layout, would grab everything in this folder, list it all, allowing the user (myself) to choose one and run it~~ [x] Done
+~~Tomorrow I will work on updating this to work with anything I add to it~~ 
+- [x] Done
+
+~~The ideal layout, would grab everything in this folder, list it all, allowing the user (myself) to choose one and run it~~ 
+- [x] Done
 
 ---
 Everything Will actually be in this same dir because other wise it gets touchy
